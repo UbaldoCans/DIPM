@@ -1,0 +1,257 @@
+/* Estilo general */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+  }
+  .about {
+    max-width: 50%;
+    margin: auto;
+    padding: 2rem 1rem;
+    text-align: center;
+    align-items: center;
+  }
+  
+  /* Sección principal del header */
+  .hero {
+    position: relative;
+    height: 100vh;
+    background: url('./assets/img/bgIngenieria.jpg') no-repeat center center/cover;
+    color: #fff;
+  }
+  
+  /* Oscurecer el fondo */
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  /* Navegación */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+  }
+  .logo {
+    /* tamaño */
+    width: 100px;
+    height: 100px;
+  }
+  
+  .navbar .logo img {
+    height: 100px;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+  }
+  
+  .nav-links li {
+    margin: 0;
+  }
+  
+  .nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+  }
+  
+  .nav-links a:hover {
+    text-decoration: underline;
+  }
+  
+  .hero-content {
+    display: flex; /* Permite alinear elementos dentro del contenedor */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    height: 100vh; /* Asegura que el contenedor ocupe toda la altura de la pantalla */
+    /* background-color: #000; Opcional: color de fondo para mejor visibilidad */
+  }
+  
+  .hero-content img {
+    max-width: 100%; /* Evita que la imagen exceda el tamaño del contenedor */
+    max-height: 80vh; /* Limita la altura de la imagen al 80% de la altura del viewport */
+    width: auto; /* Mantiene las proporciones */
+    height: auto; /* Mantiene las proporciones */
+  }
+  
+  
+  .services {
+    text-align: center;
+    padding: 2rem 1rem;
+    background-color: #f9f9f9;
+  }
+  
+  .services h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #333;
+  }
+  
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+    padding: 0 1rem;
+  }
+  
+  .service-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .service-item img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+  }
+  .container {
+    width: 90%;
+    max-width: 100%;
+    margin: auto;
+    overflow-x: auto;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  thead th {
+    background-color: #d2232a;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: 1rem;
+  }
+  
+  tbody td {
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+    font-size: 0.9rem;
+  }
+  
+  tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  tbody tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  th {
+    border: 1px solid #ccc;
+  }
+  
+  td:first-child {
+    text-align: left;
+    font-weight: bold;
+  }
+  
+  td {
+    padding: 10px;
+  }
+  .container-contact {
+    /* padding top */
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 90%;
+    margin: auto;
+  }
+  
+  .info {
+    flex: 1;
+    padding-right: 20px;
+  }
+  
+  .info h1 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #000000;
+  }
+  
+  .section {
+    margin-bottom: 20px;
+  }
+  
+  .section p {
+    margin: 5px 0;
+    font-size: 1rem;
+  }
+  
+  .hours {
+    flex: 0.8;
+  }
+  
+  .hours p {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+  
+  .hours ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .hours li {
+    font-size: 1rem;
+    margin: 5px 0;
+  }
+  
+  .icon-location,
+  .icon-email,
+  .icon-phone,
+  .icon-clock {
+    color: #d2232a;
+    margin-right: 10px;
+  }
+  
+  /* Example FontAwesome icons (or replace with your preferred icons) */
+  .icon-location::before {
+    content: '\f3c5'; /* FontAwesome location icon */
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+  }
+  
+  .icon-email::before {
+    content: '\f0e0'; /* FontAwesome envelope icon */
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+  }
+  
+  .icon-phone::before {
+    content: '\f095'; /* FontAwesome phone icon */
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+  }
+  
+  .icon-clock::before {
+    content: '\f017'; /* FontAwesome clock icon */
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+  }
+  .footer-content {
+    font-size: 15px;
+    text-align: center;
+  }
