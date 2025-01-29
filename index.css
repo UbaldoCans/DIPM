@@ -1,257 +1,341 @@
-/* Estilo general */
-body, html {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    box-sizing: border-box;
-  }
-  .about {
-    max-width: 50%;
-    margin: auto;
-    padding: 2rem 1rem;
-    text-align: center;
-    align-items: center;
-  }
-  
-  /* Sección principal del header */
-  .hero {
-    position: relative;
-    height: 100vh;
-    background: url('./assets/img/bgIngenieria.jpg') no-repeat center center/cover;
-    color: #fff;
-  }
-  
-  /* Oscurecer el fondo */
-  .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-  }
-  
-  /* Navegación */
+/* Variables globales */
+:root {
+  --primary-color: #1a4d7c;
+  --secondary-color: #2980b9;
+  --text-color: #333;
+  --light-gray: #f4f4f4;
+  --dark-gray: #333;
+  --white: #ffffff;
+  --max-width: 1200px;
+  --padding-section: 4rem 2rem;
+}
+
+/* Estilos generales */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  color: var(--text-color);
+}
+
+/* Header y navegación */
+.hero {
+  position: relative;
+  height: 100vh;
+  background-image: url('assets/img/bgIngenieria.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5%;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.logo img {
+  height: 90px;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+}
+
+.nav-links li a {
+  color: var(--white);
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: var(--secondary-color);
+}
+
+.hero-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: var(--white);
+}
+
+.hero-content img {
+  max-width: 300px;
+}
+
+/* Secciones About */
+.about {
+  padding: var(--padding-section);
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.about h2 {
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+}
+
+.about p {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+/* Sección Servicios */
+.servicios {
+  padding: var(--padding-section);
+  background: var(--light-gray);
+}
+
+.servicios h2 {
+  text-align: center;
+  color: var(--primary-color);
+  margin-bottom: 3rem;
+  font-size: 2.5rem;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.service-item {
+  background: var(--white);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.service-item h3 {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.service-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
+/* Sección Proyectos */
+.proyectos {
+  padding: var(--padding-section);
+  text-align: center;
+}
+
+.proyectos h2 {
+  text-align: center;
+  color: var(--primary-color);
+  margin-bottom: 3rem;
+  font-size: 2.5rem;
+}
+
+.proyectos video {
+  max-width: 100%;
+  margin-top: 2rem;
+}
+
+/* Tabla Láser */
+.tabla-laser {
+  padding: var(--padding-section);
+  background: var(--light-gray);
+}
+
+.tabla-laser .container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2rem 0;
+  background: var(--white);
+}
+
+th, td {
+  padding: 1rem;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+th {
+  background: var(--primary-color);
+  color: var(--white);
+}
+
+/* Sección Contacto */
+.contacto {
+  padding: var(--padding-section);
+}
+
+.container-contact {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.info, .hours {
+  padding: 2rem;
+  background: var(--white);
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.hours ul {
+  list-style: none;
+}
+
+.hours li {
+  margin-bottom: 0.5rem;
+}
+
+/* Footer */
+footer {
+  background: var(--dark-gray);
+  color: var(--white);
+  padding: 2rem;
+}
+
+.footer-content {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+/* Media Queries para Responsividad */
+@media screen and (max-width: 768px) {
   .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
+    flex-direction: column;
+    padding: 1rem;
   }
-  .logo {
-    /* tamaño */
-    width: 100px;
-    height: 100px;
-  }
-  
-  .navbar .logo img {
-    height: 100px;
-  }
-  
+
   .nav-links {
-    list-style: none;
-    display: flex;
-    gap: 2rem;
-  }
-  
-  .nav-links li {
-    margin: 0;
-  }
-  
-  .nav-links a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 1rem;
-  }
-  
-  .nav-links a:hover {
-    text-decoration: underline;
-  }
-  
-  .hero-content {
-    display: flex; /* Permite alinear elementos dentro del contenedor */
-    justify-content: center; /* Centra horizontalmente */
-    align-items: center; /* Centra verticalmente */
-    height: 100vh; /* Asegura que el contenedor ocupe toda la altura de la pantalla */
-    /* background-color: #000; Opcional: color de fondo para mejor visibilidad */
-  }
-  
-  .hero-content img {
-    max-width: 100%; /* Evita que la imagen exceda el tamaño del contenedor */
-    max-height: 80vh; /* Limita la altura de la imagen al 80% de la altura del viewport */
-    width: auto; /* Mantiene las proporciones */
-    height: auto; /* Mantiene las proporciones */
-  }
-  
-  
-  .services {
+    flex-direction: column;
     text-align: center;
-    padding: 2rem 1rem;
-    background-color: #f9f9f9;
-  }
-  
-  .services h2 {
-    font-size: 2rem;
-    margin-bottom: 2rem;
-    color: #333;
-  }
-  
-  .services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1rem;
-    padding: 0 1rem;
-  }
-  
-  .service-item img {
     width: 100%;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding-top: 1rem;
   }
-  
-  .service-item img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+
+  .nav-links li {
+    margin: 0.5rem 0;
   }
-  .container {
-    width: 90%;
-    max-width: 100%;
-    margin: auto;
+
+  .hero-content img {
+    max-width: 200px;
+  }
+
+  .about, .servicios, .proyectos, .tabla-laser, .contacto {
+    padding: 2rem 1rem;
+  }
+
+  table {
+    display: block;
     overflow-x: auto;
   }
-  
-  table {
+}
+
+@media screen and (max-width: 480px) {
+  h2 {
+    font-size: 1.8rem;
+  }
+
+  .service-item {
+    padding: 1rem;
+  }
+
+  .hero-content img {
+    max-width: 150px;
+  }
+}
+
+/* Estilos existentes permanecen igual hasta la parte del navbar */
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+}
+
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  background-color: var(--white);
+}
+
+/* Cuando el menú está activo */
+.hamburger.active .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active .bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.active .bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Media Queries actualizados */
+@media screen and (max-width: 768px) {
+  .hamburger {
+    display: block;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+  }
+
+  .nav-links {
+    position: fixed;
+    left: -100%;
+    top: 70px;
+    gap: 0;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.95);
     width: 100%;
-    border-collapse: collapse;
-    background: white;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  thead th {
-    background-color: #d2232a;
-    color: white;
     text-align: center;
-    padding: 10px;
-    font-size: 1rem;
-  }
-  
-  tbody td {
-    text-align: center;
-    padding: 10px;
-    border: 1px solid #ccc;
-    font-size: 0.9rem;
-  }
-  
-  tbody tr:nth-child(even) {
-    background-color: #f9f9f9;
-  }
-  
-  tbody tr:hover {
-    background-color: #f1f1f1;
-  }
-  
-  th {
-    border: 1px solid #ccc;
-  }
-  
-  td:first-child {
-    text-align: left;
-    font-weight: bold;
-  }
-  
-  td {
-    padding: 10px;
-  }
-  .container-contact {
-    /* padding top */
-    margin-top: 50px;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    background: #ffffff;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: 90%;
-    max-width: 90%;
-    margin: auto;
-  }
-  
-  .info {
-    flex: 1;
-    padding-right: 20px;
-  }
-  
-  .info h1 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-    color: #000000;
-  }
-  
-  .section {
-    margin-bottom: 20px;
-  }
-  
-  .section p {
-    margin: 5px 0;
-    font-size: 1rem;
-  }
-  
-  .hours {
-    flex: 0.8;
-  }
-  
-  .hours p {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
-  }
-  
-  .hours ul {
-    list-style: none;
+    transition: 0.3s;
     padding: 0;
   }
-  
-  .hours li {
-    font-size: 1rem;
-    margin: 5px 0;
+
+  .nav-links.active {
+    left: 0;
   }
-  
-  .icon-location,
-  .icon-email,
-  .icon-phone,
-  .icon-clock {
-    color: #d2232a;
-    margin-right: 10px;
+
+  .nav-links li {
+    margin: 16px 0;
   }
-  
-  /* Example FontAwesome icons (or replace with your preferred icons) */
-  .icon-location::before {
-    content: '\f3c5'; /* FontAwesome location icon */
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
+
+  .navbar {
+    padding: 1rem;
   }
-  
-  .icon-email::before {
-    content: '\f0e0'; /* FontAwesome envelope icon */
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-  }
-  
-  .icon-phone::before {
-    content: '\f095'; /* FontAwesome phone icon */
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-  }
-  
-  .icon-clock::before {
-    content: '\f017'; /* FontAwesome clock icon */
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-  }
-  .footer-content {
-    font-size: 15px;
-    text-align: center;
-  }
+}
